@@ -8,7 +8,7 @@ The goal of this project is to develop a machine learning model that will accura
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/ezwang8/CryptoClustering.git
+   git clone https://github.com/ezwang8/classification-challenge.git
    ```
 
 2. **Make sure Python is installed:**
@@ -31,24 +31,14 @@ The goal of this project is to develop a machine learning model that will accura
      pip install pandas
      ```
 
-   - Install `scikit-learn` for K-Means clustering and PCA:
+   - Install `scikit-learn` for machine learning models:
      ```bash
      pip install scikit-learn
      ```
 
-   - Install `matplotlib` for data visualization:
-     ```bash
-     pip install matplotlib
-     ```
-
-   - Install `hvplot` for interactive plotting:
-     ```bash
-     pip install hvplot
-     ```
-
 5. **Navigate to the Project Directory:**
    ```bash
-   cd CryptoClustering
+   cd classification-challenge
    ```
 
 6. **Launch Jupyter Notebook:**
@@ -58,50 +48,27 @@ The goal of this project is to develop a machine learning model that will accura
    ```
 
 7. **Open the Notebook:**
-   In Jupyter, locate the `Crypto_Clustering.ipynb` file and run the cells for analysis.
-
-## File Roles
-- **Crypto_Clustering.ipynb:** The main script that performs the analysis. It retrieves, processes, and analyzes the data from the "crypto_market_data" file.
-- **crypto_market_data.csv:** The csv file that contains the data of price fluctuations in the cryptocurrency market.
+   In Jupyter, locate the `spam_detector.ipynb` file and run the cells for analysis.
 
 ## Steps
 
-1. **Load the Crypto Data:**
-   - Convert and read the `crypto_market_data.csv` file as a DataFrame.
-   - Check if the dataset is clean and consistent by displaying a sample of its data.
+1. **Retrieve the Data:**
+   - Convert and read the data from `https://static.bc-edx.com/ai/ail-v-1-0/m13/challenge/spam-data.csv` into a dataset.
 
 2. **Data Preparation:**
-   - Standardize the data with `StandardScaler` to make sure all of the features have a similar scale.
-   - Save the standardized data into a new DataFrame.
+   - Split the Data into Training and Testing Sets with random_state = 78.
+   - Use `StandardScaler` to scale the features data.
 
-3. **Best Value for `k` (Elbow Method):**
-   - Use the Elbow Method to find the best value of `k` for K-means clustering.
-   - Loop through possible `k` values, from a range of 1 to 11, and compute the inertia for each value.
-   - Plot a line chart with all the inertia values and locate the "elbow point" in the graph to select the optimal `k`.
+3. **Create and Fit a Logistic Regression Model:**
+   - Train the Logistic Regression model with random_state = 1.
+   - Fit the Logistic Regression model by using the test data.
+   - Calculate the accuracy score by evaluating `y_test` vs. `testing_predictions`.
 
-4. **Clustering with K-means (Original Scaled Data):**
-   - Initialize and fit the K-Means model using the best value for `k`.
-   - Predict the clusters and add them as a new column as cluster labels.
-   - Identify the clusters by vizualizing them with a scatter plot.
-
-5. **Optimize Clusters with Principal Component Analysis (PCA):**
-   - Use the PCA model to reduce to three principal components.
-   - Calculate the total explained variance by adding the variance percentages of each principal component together.
-
-6. **Best Value for `k` (PCA Data):**
-   - Repeat the Elbow Method with the PCA data to find its best `k`.
-   - Plot a line chart with all the inertia values and locate the "elbow point" in the graph to select the optimal `k`.
-
-7. **Clustering with K-means (PCA Data):**
-   - Initialize and fit the K-Means model, with PCA Data, using the best value for `k`.
-   - Predict the clusters and add them as a new column in the PCA DataFrame.
-   - Identify PCA Data's clusters by vizualizing them with a scatter plot.
-
-8. **Calculate Feature Weights on each Principal Component:**
-   - Create a DataFrame to find the weights of each feature on the principal components.
-   - Calculate the strongest positive and negative influences, on each component, to find key drivers of fluctuations in the data.
+4. **Create and Fit a Random Forest Model:**
+   - Train the Random Forest model with random_state = 1.
+   - Fit the Random Forest model by using the test data.
+   - Calculate the accuracy score by evaluating `y_test` vs. `testing_predictions`.
 
 ## Summary
-- With the Elbow Method, we found that the optimal number of clusters for this cryptocurrency data is 4. This applies in both the original and PCA-transformed data.
-- Optimizing the clusters with PCA revealed that 89.5% of the data’s total variance is explained by the top three components.
-- The clustering analysis concludes with finding the features with the strongest influence, for each PCA. They are "price_change_percentage_200d", "price_change_percentage_30d", and "price_change_percentage_7d".
+- Between the two models, the Random Forest model would be more reliable for spam detection. The Random Forest model's accuracy score is 3% higher than the Logistic Regression model.
+- If the Random Foresting model were to be used to detect spam, it will be able to be successful at a rate of 95.48%
