@@ -2,9 +2,7 @@
 
 ## Project Overview
 
-
-The goal of this project is to develop a machine learning model that will accurately determine which emails are spam. There will be two different classificiation models that each have their own methods of predictions; the logistic regression model and a random forest model. The most successful model would be able to improve the email filtering system just by evaluating the pattern of spam emails.
-
+The goal of this project is to develop a machine learning model that will accurately determine which emails are spam. There will be two different classificiation models that each have their own methods of predictions; the logistic regression model and a random forest model. The most successful model would be able to create a more consistent email filtering system just by evaluating the pattern of spam emails.
 
 ## Installation Instructions
 
