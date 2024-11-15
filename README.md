@@ -71,4 +71,4 @@ The goal of this project is to develop a machine learning model that will accura
 
 ## Summary
 - Between the two models, the Random Forest model would be more reliable for spam detection. The Random Forest model's accuracy score is 3% higher than the Logistic Regression model.
-- If the Random Foresting model were to be used to detect spam, it will be able to be successful at a rate of 95.48%
+- If the Random Foresting model were to be used to detect spam, it will be able to be successful at a rate of 95.48%.
