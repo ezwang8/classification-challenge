@@ -1,7 +1,10 @@
 # Crypto Clustering Challenge
 
 ## Project Overview
-The goal of this project is to use unsupervised learning to identify the impactful clusters of cryptocurrencies. By using techniques that use the K-means algorithm and Principal Component Analysis (PCA), we can classify cryptocurrencies based on their price fluctuations during specific timeframes. A successful program would give us valuable insights on the current standing of cryptocurrencies and its ongoing market behaviors.
+
+
+The goal of this project is to develop a machine learning model that will accurately determine which emails are spam. There will be two different classificiation models that each have their own methods of predictions; the logistic regression model and a random forest model. The most successful model would be able to improve the email filtering system just by evaluating the pattern of spam emails.
+
 
 ## Installation Instructions
 
